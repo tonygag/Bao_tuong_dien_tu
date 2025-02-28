@@ -1,25 +1,35 @@
+/* CSS chung cho toàn bộ trang web */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: white;
+  color: #333;
+}
+
+/* CSS cho header */
 #header {
   position: relative;
   width: 100%;
-  height: 100vh; /* Chiếm toàn bộ chiều cao viewport */
+  height: 100vh;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Tránh hình ảnh tràn ra ngoài */
+  overflow: hidden;
 }
 
 .ao-dai-image {
-  width: 45%; /* Chiều rộng ảnh áo dài */
+  width: 45%;
   height: auto;
   max-height: 80vh;
 }
 
 .header-content {
-  width: 45%; /* Chiều rộng nội dung */
+  width: 45%;
   text-align: center;
   padding: 20px;
-  color: #333; /* Màu chữ, có thể điều chỉnh */
+  color: #333;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -28,98 +38,222 @@
 }
 
 .title {
-  font-size: 3rem; /* Cỡ chữ tiêu đề lớn */
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 1rem; /* Khoảng cách với phần tử dưới */
+  margin-bottom: 1rem;
   color: #e74c3c;
 }
 
 .subtitle {
-  font-size: 1.5rem; /* Cỡ chữ phụ đề */
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #f39c12;
 }
 
 .header-content p {
   font-size: 1rem;
-  line-height: 1.6; /* Độ cao dòng */
-}
-
-#content {
-  font-family: sans-serif;
   line-height: 1.6;
-  padding: 20px;
-  max-width: 900px; /* Giới hạn chiều rộng nội dung */
-  margin: 0 auto; /* Căn giữa nội dung */
-  background-color: #f8f8f8; /* Màu nền nhẹ */
-  border-radius: 8px; /* Bo góc */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
 }
 
-#content h3 {
-  font-size: 1.5rem;
-  color: #e74c3c; /* Màu tiêu đề chính */
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #e74c3c;
-  padding-bottom: 0.5rem;
+#content1 {
+  position: relative; /* Cần thiết để định vị lớp phủ */
+  width: 100%;
+  height: 100vh; /* Chiếm toàn bộ chiều cao viewport */
+  background-image: url("resources/anh1.jpg"); /* Đặt ảnh làm nền */
+  background-size: cover; /* Ảnh phủ kín toàn bộ div */
+  background-position: center; /* Căn giữa ảnh */
+  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  display: flex;
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  color: white; /* Màu chữ trắng để nổi bật trên nền */
+  text-align: center; /* căn giữa nội dung */
+  overflow: hidden; /* nếu nội dung bị tràn, nó sẽ bị ẩn đi */
 }
 
-#content p {
-  margin-bottom: 1rem;
-  color: #333;
-  text-align: justify;
+.content1-overlay {
+  position: relative; /* Để z-index hoạt động */
+  z-index: 2; /* Đặt lớp phủ lên trên ảnh nền */
+  padding: 2rem;
+  max-width: 80%; /* Giới hạn chiều rộng nội dung */
+  background-color: rgba(0, 0, 0, 0.4); /* Thêm lớp phủ màu đen trong suốt */
+  border-radius: 15px;
 }
 
-.tieudephu {
-  font-size: 1.25rem;
-  color: #f39c12; /* Màu tiêu đề phụ */
-  margin-top: 2.5rem;
+#content1 h3 {
+  font-size: 3rem;
   margin-bottom: 1rem;
+  color: #f39c12; /* Màu cam cho tiêu đề, nổi bật */
+}
+
+#content1 p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Thêm đổ bóng cho chữ */
+}
+
+#content2 {
+  display: flex; /* Sử dụng Flexbox */
+  width: 100%;
+  background-color: #fff; /* Màu nền trắng, có thể tùy chỉnh */
+  overflow: hidden; /* Tránh nội dung tràn ra ngoài */
+  border-radius: 15px; /* Bo góc (tùy chọn) */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Đổ bóng */
+}
+
+.content2-text {
+  flex: 1; /* Chiếm 50% chiều rộng */
+  padding: 2rem; /* Tạo khoảng cách xung quanh nội dung */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  order: 1;
+}
+
+.content2-image {
+  flex: 1; /* Chiếm 50% chiều rộng */
+  order: 2;
+}
+
+.content2-image img {
+  width: 100%;
+  height: 100%; /* Chiếm toàn bộ chiều cao của .content2-image */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  display: block; /* Loại bỏ khoảng trắng thừa */
+}
+
+#content2 h3 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+#content2 p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  #content2 {
+    flex-direction: column; /* Chuyển về xếp chồng khi màn hình nhỏ */
+  }
+  .content2-text {
+    order: 2;
+  }
+  .content2-image {
+    order: 1;
+  }
+  .content2-image img {
+    height: auto; /* Để ảnh tự điều chỉnh chiều cao */
+  }
+}
+
+#content3 {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+#content3 h3 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 2rem 2.5rem;
+  margin: 0;
+  background-color: #ecf0f1;
+  border-bottom: 2px solid #d7d7d7;
   text-align: center;
 }
 
 .image-container {
-  display: flex;
-  flex-wrap: wrap; /* Cho phép ảnh xuống dòng khi không đủ chỗ */
-  justify-content: space-around; /* Căn đều ảnh */
-  gap: 10px; /* Khoảng cách giữa các ảnh */
-  margin-bottom: 2rem;
+  display: flex; /* Sử dụng Flexbox */
+  flex-wrap: wrap; /* Cho phép xuống dòng khi không đủ chỗ */
+  justify-content: space-around; /* Canh đều các item */
+  padding: 1rem;
 }
 
-.image-container img {
-  border-radius: 8px; /* Bo góc ảnh */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng ảnh */
-  object-fit: cover;
+.image-item {
+  width: 30%; /* Chiếm khoảng 30% chiều rộng */
+  margin-bottom: 1rem; /* Khoảng cách giữa các item */
+  text-align: center; /* Căn giữa nội dung */
 }
-.image-container img:nth-child(1),
-.image-container img:nth-child(6) {
-  width: 20%;
-}
-.image-container img:nth-child(2),
-.image-container img:nth-child(3),
-.image-container img:nth-child(4),
-.image-container img:nth-child(5) {
-  width: 45%;
-}
-#content video {
-  width: 100%; /* Video responsive */
-  max-width: 600px; /* Giới hạn kích thước tối đa */
+
+.image-item img {
+  width: 100%;
   height: auto;
-  display: block; /* Loại bỏ khoảng trắng thừa dưới video */
-  margin: 0 auto 2rem; /* Căn giữa video */
-  border-radius: 8px;
+  display: block;
+  border-radius: 10px; /* Bo góc ảnh (tùy chọn) */
+  margin-bottom: 0.5rem; /* Khoảng cách giữa ảnh và chữ */
 }
 
+.image-item p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .image-item {
+    width: 100%; /* Chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+  }
+}
+
+/* ... (CSS chung cho body, header, v.v.) ... */
+
+.video-section {
+  text-align: center;
+  padding: 20px;
+  margin: 0 2rem 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto;
+  overflow: hidden; /* Ẩn phần thừa của iframe nếu có */
+  border-radius: 8px; /* Bo góc (tùy chọn) */
+}
+
+/* Kỹ thuật responsive video 16:9 */
+.video-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* Tỉ lệ 16:9 (9 / 16 = 0.5625) */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Loại bỏ viền của iframe */
+}
+/* CSS cho phần bình luận (đã tối ưu) */
 .comment-section {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 2rem 2rem; /* Thêm margin để tránh tràn và tạo khoảng cách */
 }
-
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
 .comment-section label {
-  display: block; /* Mỗi label trên một dòng */
+  display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
@@ -130,7 +264,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+  box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
@@ -142,25 +276,25 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
+  transition: background-color 0.3s ease;
+  align-self: flex-start; /* Căn trái nút submit */
 }
 
 .comment-section input[type="submit"]:hover {
-  background-color: #c0392b; /* Màu đậm hơn khi hover */
-}
-.comment-section p {
-  text-align: left;
+  background-color: #c0392b;
 }
 
+/* CSS cho footer (giữ nguyên) */
 #footer {
-  background-color: #333; /* Màu nền tối */
-  color: white; /* Chữ màu trắng */
-  text-align: center; /* Căn giữa nội dung */
-  padding: 20px; /* Khoảng cách đệm */
-  font-family: sans-serif;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 2rem;
   border-top: 2px solid #e74c3c;
 }
 
 #footer p {
   line-height: 1.5;
-  font-size: 0.9rem; /* Chữ hơi nhỏ hơn một chút */
+  font-size: 0.9rem;
 }
