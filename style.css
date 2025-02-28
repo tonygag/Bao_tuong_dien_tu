@@ -77,7 +77,7 @@ body {
 .content1-overlay {
   position: relative;
   z-index: 2;
-  padding: 4rem;
+  padding: 3rem; /* Giảm padding */
   max-width: 80%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 20px;
@@ -90,15 +90,15 @@ body {
 }
 
 #content1 h3 {
-  font-size: 4rem;
-  margin-bottom: 2rem;
+  font-size: 3rem; /* Giảm cỡ chữ */
+  margin-bottom: 1.5rem; /* Giảm khoảng cách */
   color: #f39c12;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #content1 p {
-  font-size: 1.4rem;
-  line-height: 1.9;
+  font-size: 1.2rem; /* Giảm cỡ chữ */
+  line-height: 1.8; /* Tăng dãn dòng */
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 }
@@ -121,7 +121,7 @@ body {
 
 .content2-text {
   flex: 1;
-  padding: 4rem;
+  padding: 3rem; /* Giảm padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,16 +144,17 @@ body {
 }
 
 #content2 h3 {
-  font-size: 2.8rem;
+  font-size: 2.2rem; /* Giảm cỡ chữ */
   font-weight: 700;
   color: #2c3e50;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Giảm khoảng cách */
 }
 
 #content2 p {
-  font-size: 1.4rem;
-  line-height: 1.9;
+  font-size: 1.2rem; /* Giảm cỡ chữ */
+  line-height: 1.8;
   color: #495057;
+  text-align: justify; /* Căn đều hai bên */
 }
 
 /* Responsive cho Content 2 */
@@ -200,21 +201,23 @@ body {
 }
 
 .image-container {
-  display: grid; /* Sử dụng CSS Grid */
-  grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
-  gap: 2rem; /* Khoảng cách giữa các cột và hàng */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   padding: 3rem;
 }
+
 @media (max-width: 768px) {
   .image-container {
-    grid-template-columns: 1fr; /* Chuyển về 1 cột trên mobile */
+    grid-template-columns: 1fr;
   }
+
   .image-item img {
-    height: auto; /* Để ảnh tự điều chỉnh chiều cao */
+    height: auto;
   }
 }
+
 .image-item {
-  /* Loại bỏ width, margin-bottom */
   text-align: center;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
@@ -226,17 +229,16 @@ body {
 
 .image-item img {
   width: 100%;
-  height: 300px;
+  height: 300px; /* Điều chỉnh chiều cao ảnh */
   object-fit: cover;
   display: block;
   border-radius: 15px;
-  /* Loại bỏ margin-bottom */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out;
 }
 
 #content3 h3 {
-  font-size: 2.8rem;
+  font-size: 2.2rem; /* Giảm cỡ chữ */
   font-weight: 700;
   color: #2c3e50;
   padding: 3rem;
@@ -247,12 +249,12 @@ body {
 }
 
 #content3 p {
-  grid-column: 1 / -1; /* Chiếm toàn bộ các cột */
-  text-align: center;
-  font-size: 1.3rem;
+  grid-column: 1 / -1;
+  text-align: justify; /* Căn đều hai bên */
+  font-size: 1.2rem; /* Giảm cỡ chữ */
   line-height: 1.8;
   color: #495057;
-  margin-top: 2rem; /* Thêm khoảng cách với ảnh */
+  margin-top: 2rem;
 }
 
 /* Video Section*/
@@ -359,12 +361,26 @@ body {
   font-size: 1.1rem;
 }
 
-/* Tiêu đề phụ */
+/* Tiêu đề phụ (cho video và comment section) */
 .tieudephu {
-  font-size: 2.5rem;
+  font-size: 2.2rem; /* Giảm cỡ chữ */
   color: #f39c12;
   margin-top: 0;
   margin-bottom: 2rem;
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* Class chung cho các tiêu đề chính (h3) */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center; /* Thêm căn giữa cho tất cả h3 */
+}
+/* Class để chỉnh sửa các thuộc tính chung của các đề mục */
+#content1,
+#content2,
+#content3 {
+  padding: 2rem;
 }
