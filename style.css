@@ -1,13 +1,13 @@
 /* CSS chung cho toàn bộ trang web */
 body {
-  font-family: "Inter", sans-serif; /* Font chữ đẹp, hiện đại */
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
   margin: 0;
-  background-color: #f5f7fa; /* Màu nền tinh tế */
-  color: #495057; /* Màu chữ dịu mắt */
+  background-color: #f5f7fa;
+  color: #495057;
 }
 
-/* CSS cho header (Giữ nguyên từ phiên bản trước) */
+/* CSS cho header */
 #header {
   position: relative;
   width: 100%;
@@ -17,7 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng nhẹ */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .ao-dai-image {
@@ -161,19 +161,24 @@ body {
   #content2 {
     flex-direction: column;
   }
+
   .content2-text {
     order: 2;
   }
+
   .content2-image {
     order: 1;
   }
+
   .content2-image img {
     height: auto;
     border-radius: 20px 20px 0 0;
   }
+
   #content2:hover {
     transform: none;
   }
+
   .content2-image img:hover {
     transform: none;
   }
@@ -189,43 +194,45 @@ body {
   padding-bottom: 3rem;
   transition: transform 0.3s ease-in-out;
 }
+
 #content3:hover {
   transform: translateY(-10px);
 }
+
 .image-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid; /* Sử dụng CSS Grid */
+  grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+  gap: 2rem; /* Khoảng cách giữa các cột và hàng */
   padding: 3rem;
 }
-
+@media (max-width: 768px) {
+  .image-container {
+    grid-template-columns: 1fr; /* Chuyển về 1 cột trên mobile */
+  }
+  .image-item img {
+    height: auto; /* Để ảnh tự điều chỉnh chiều cao */
+  }
+}
 .image-item {
-  width: 30%;
-  margin-bottom: 2rem;
+  /* Loại bỏ width, margin-bottom */
   text-align: center;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
+
 .image-item:hover {
   transform: scale(1.05);
 }
 
 .image-item img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
   display: block;
   border-radius: 15px;
-  margin-bottom: 1.5rem;
+  /* Loại bỏ margin-bottom */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out;
-}
-
-.image-item p {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: #495057;
-  margin: 0;
 }
 
 #content3 h3 {
@@ -238,18 +245,16 @@ body {
   border-bottom: 3px solid #dee2e6;
   text-align: center;
 }
-/* Responsive cho Content 3 */
-@media (max-width: 768px) {
-  .image-item {
-    width: 100%;
-  }
-  .image-item:hover {
-    transform: none;
-  }
-  .image-item img {
-    height: auto;
-  }
+
+#content3 p {
+  grid-column: 1 / -1; /* Chiếm toàn bộ các cột */
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #495057;
+  margin-top: 2rem; /* Thêm khoảng cách với ảnh */
 }
+
 /* Video Section*/
 .video-section {
   text-align: center;
@@ -273,7 +278,7 @@ body {
 .video-container::before {
   content: "";
   display: block;
-  padding-top: 56.25%; /* Tỉ lệ 16:9 (9 / 16 = 0.5625) */
+  padding-top: 56.25%;
 }
 
 .video-container iframe {
@@ -310,18 +315,18 @@ body {
 .comment-section textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ced4da; /* Màu viền Bootstrap */
+  border: 1px solid #ced4da;
   border-radius: 4px;
   box-sizing: border-box;
   margin-bottom: 1rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Hiệu ứng Bootstrap */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .comment-section input[type="text"]:focus,
 .comment-section textarea:focus {
-  border-color: #80bdff; /* Màu viền khi focus */
+  border-color: #80bdff;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Hiệu ứng đổ bóng khi focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .comment-section input[type="submit"] {
