@@ -62,7 +62,7 @@ body {
 h1 {
   font-size: 5rem; /* Slightly smaller for better balance on white */
   font-weight: 700;
-  font-family: "Vina Sans", sans-serif;
+  font-family: "Tac One", sans-serif;
   color: #e74c3c; /* Keeping the red for the main title */
   text-shadow: none;
 }
@@ -133,7 +133,7 @@ p {
 .subtitle {
   font-size: 1.5rem; /* Reduced font size */
   color: #ff9d00;
-  margin-bottom: -3.5rem;
+  margin-bottom: 0rem;
 }
 
 /* --- Content 1 (with Overlay) --- */
