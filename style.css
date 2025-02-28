@@ -133,7 +133,11 @@ p {
 .subtitle {
   font-size: 1.5rem; /* Reduced font size */
   color: #ff9d00;
-  margin-bottom: 0rem;
+  margin-bottom: -3rem; /* Reduced margin-bottom to bring it closer to the paragraph */
+}
+/*Add a new style for paragraph*/
+.header-content p {
+  margin-top: -2.5rem; /*Remove the default top margin of p tag*/
 }
 
 /* --- Content 1 (with Overlay) --- */
